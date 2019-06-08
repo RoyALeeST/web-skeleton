@@ -1,14 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; // Angular material Browser Animations
+
 import { AppComponent } from './app.component';
+
+// Custom Modules
+import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './home/home.component';
+import { RoutingModule } from './routing/routing.module';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutComponent,
+    HomeComponent,
+    HeaderComponent,
+    SidenavListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
+    RoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
