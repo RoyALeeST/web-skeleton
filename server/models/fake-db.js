@@ -7,7 +7,7 @@ class FakeDb{
             [            {
                 firstName: 'Mario',
                 lastName: 'Bros',
-                maternalLastName: 'Nintendo',
+                secondLastName: 'Nintendo',
                 dateOfBirth: '1993/02/01',
                 address: 'P. Sherman Wallabee Stret 42 Sidney',
                 reputation: 80,
@@ -30,7 +30,7 @@ class FakeDb{
             {
                 firstName: 'John',
                 lastName: 'Snow',
-                maternalLastName: 'Stark',
+                secondLastName: 'Stark',
                 dateOfBirth: '1981/06/04',
                 address: 'P. Sherman Wallabee Stret 42 Sidney',
                 reputation: 90,
@@ -53,7 +53,7 @@ class FakeDb{
             {
                 firstName: 'Sonic',
                 lastName: 'Heroes',
-                maternalLastName: '2',
+                secondLastName: '2',
                 dateOfBirth: '2001/11/07',
                 address: 'P. Sherman Wallabee Stret 42 Sidney',
                 reputation: 85,
@@ -76,7 +76,7 @@ class FakeDb{
             {
                 firstName: 'Black',
                 lastName: 'Hole',
-                maternalLastName: 'Supermassive',
+                secondLastName: 'Supermassive',
                 dateOfBirth: '1999/09/09',
                 address: 'P. Sherman Wallabee Stret 42 Sidney',
                 reputation: 95,

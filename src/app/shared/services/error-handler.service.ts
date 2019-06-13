@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ErrorDialogComponent } from '../components/dialogs/error-dialog/error-dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,9 @@ export class ErrorHandlerService {
 
   public errorMessage: string = '';
  
-  constructor(private router: Router) { }
+  public dialogConfig;
+ 
+  constructor(private router: Router, private dialog: MatDialog) { }
  
   public handleError = (error: HttpErrorResponse) => {
     if(error.status === 500){
@@ -35,7 +39,8 @@ export class ErrorHandlerService {
  
   private handleOtherError = (error: HttpErrorResponse) => {
     this.createErrorMessage(error);
-    //TODO: this will be fixed later;
+    this.dialogConfig.data = { 'errorMessage': this.errorMessage };
+    this.dialog.open(ErrorDialogComponent, this.dialogConfig);
   }
  
   private createErrorMessage(error: HttpErrorResponse){

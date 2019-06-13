@@ -5,9 +5,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; //
 
 import { AppComponent } from './app.component';
 
-// Custom Modules
-import { MaterialModule } from './shared/modules/material/material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+//Custom Modules
+import { SharedModule } from './shared/modules/shared.module'
+
+// Custom Components
 import { LayoutComponent } from './components/common/layout/layout.component';
 import { HomeComponent } from './components/common/home/home.component';
 import { RoutingModule } from './routing/routing.module';
@@ -25,15 +26,13 @@ import { ServerErrorComponent } from './components/common/error-pages/server-err
     SidenavListComponent,
     NotFoundComponent,
     ServerErrorComponent,
-
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
     RoutingModule,
     HttpClientModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
