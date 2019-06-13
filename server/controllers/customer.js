@@ -41,15 +41,15 @@ const Customer = require('../models/user/customer')
      */
     exports.createCustomer = async function(req, res){
         try {
-            const { firstName, lastName, maternalLastName, dateOfBirth, address, reputation } = req.body;
-            let newCustomer = Customer({ firstName, lastName, maternalLastName, dateOfBirth, address, reputation });
-            const savedUser = newCustomer.save();
+            const { firstName, lastName, secondLastName, dateOfBirth, address, reputation } = req.body;
+            let newCustomer = Customer({ firstName, lastName, secondLastName, dateOfBirth, address, reputation });
+            const savedUser = await newCustomer.save();
             if(savedUser)
             {
-                return res.status(200).send(savedUser.id);
+                return res.status(200).send({id: savedUser.id});
             }
         } catch (error) {
-            return res.status(422).send(error)
+            return res.status(422).send(error.message? error.message : error)
         }
     }
 //#endregion
