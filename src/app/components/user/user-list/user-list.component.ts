@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { SampleService } from '../../../shared/services/sample.service';
 import { User } from '../../../models/user/user.model';
 import { ErrorHandlerService } from '../../../shared/services/error-handler.service';
@@ -16,8 +18,8 @@ export class UserListComponent implements OnInit {
   public displayedColumns = ['firstName', 'lastName', 'dateOfBirth', 'address', 'details', 'update', 'delete'
 ];
   public dataSource = new MatTableDataSource<User>();
-  @ViewChild(MatSort,{static: false}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private sampleService: SampleService, 
               private errorService: ErrorHandlerService, 

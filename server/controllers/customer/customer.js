@@ -1,4 +1,4 @@
-const Customer = require('../models/user/customer')
+const Customer = require('../../models/user/customer')
 
 
 //#region  GET FUNCTIONS

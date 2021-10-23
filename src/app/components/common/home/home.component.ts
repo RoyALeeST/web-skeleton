@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorHandlerService } from '../../../shared/services/error-handler.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  private dialogConfig;
+  questions: any[];
+
+  constructor(private dialog: MatDialog, 
+    private errorService: ErrorHandlerService) {
+    this.dialogConfig = {
+      height: '200px',
+      width: '400px',
+      disableClose: true,
+      data: { }
+    }
+   }
+
 
   ngOnInit() {
   }
 
-  executeSelectedChange(event){
+
+  handleError(error){
+    console.log(error)
+    this.errorService.dialogConfig = { ...this.dialogConfig };
+    this.errorService.handleError(error);
   }
 }

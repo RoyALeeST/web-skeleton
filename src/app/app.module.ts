@@ -16,6 +16,8 @@ import { HeaderComponent } from './components/common/navigation/header/header.co
 import { SidenavListComponent } from './components/common/navigation/sidenav-list/sidenav-list.component';
 import { NotFoundComponent } from './components/common/error-pages/not-found/not-found.component';
 import { ServerErrorComponent } from './components/common/error-pages/server-error/server-error.component';
+import { ScriptService } from './shared/services/script-loader.service';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { ServerErrorComponent } from './components/common/error-pages/server-err
     HttpClientModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [ScriptService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

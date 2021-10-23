@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { Location } from '@angular/common';
 import { SampleService } from './../../../shared/services/sample.service';
 import { User } from '../../../models/user/user.model';

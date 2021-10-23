@@ -7,7 +7,7 @@ import { ServerErrorComponent } from '../components/common/error-pages/server-er
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'user', loadChildren: "../modules/user/user.module#UserModule"},
+  { path: "user", loadChildren: () => import ("../modules/user/user.module").then(m => m.UserModule) },
   { path: '404', component: NotFoundComponent}, 
   { path: '500', component: ServerErrorComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +18,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   exports: [
     RouterModule

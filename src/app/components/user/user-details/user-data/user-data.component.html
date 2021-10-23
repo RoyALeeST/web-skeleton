@@ -1,21 +1,21 @@
-<section fxLayout="row wrap" fxLayoutAlign="center center">
-    <mat-card fxFlex="500px" fxFlex.xs="100%">
+<section>
+    <mat-card>
         <mat-card-title>Details for the clicked owner</mat-card-title>
         <mat-card-content>
-          <div fxLayout="column wrap" fxLayoutGap="40px">
-            <div fxLayout="row wrap" fxFlex>
-              <div fxFlex><strong>Owner's name:</strong></div>
-              <div fxFlex>{{owner?.firstName}}</div>
+          <div>
+            <div>
+              <div ><strong>Owner's name:</strong></div>
+              <div >{{owner?.firstName}}</div>
             </div>
 
-            <div fxLayout="row wrap" fxFlex>
-                <div fxFlex><strong>Owner's last name:</strong></div>
-                <div fxFlex>{{owner?.lastName}}</div>
+            <div>
+                <div ><strong>Owner's last name:</strong></div>
+                <div >{{owner?.lastName}}</div>
               </div>
       
-            <div fxLayout="row wrap" fxFlex>
-              <div fxFlex><strong>Date of birth:</strong></div>
-              <div fxFlex>{{owner?.dateOfBirth | date}}</div>
+            <div>
+              <div ><strong>Date of birth:</strong></div>
+              <div >{{owner?.dateOfBirth | date}}</div>
             </div>
           </div>
         </mat-card-content>
